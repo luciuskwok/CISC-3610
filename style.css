@@ -4,3 +4,46 @@
 	border: 1px solid #A0A0A0;
 }
 
+body { 
+	font-family: "Arial", "Helvetica", sans-serif; 
+	font-size: 18pt;
+}
+
+h1 { 
+	font-size: 1.5em; 
+	margin-top: 0.5em;
+	margin-bottom: 0.25em;
+}
+
+h2 { 
+	font-size: 1.25em; 
+	margin-top: 0.5em;
+	margin-bottom: 0.125em;
+}
+h3 { 
+	font-size: 1.125em; 
+	margin-top: 0.25em;
+	margin-bottom: 0.0625em;
+}
+h4 { 
+	font-size: 1.0625em; 
+	margin-top: 0.125em;
+	margin-bottom: 0em;
+}
+h5 { 
+	font-size: 1.0em; 
+	margin-top: 0.0625em;
+	margin-bottom: 0em;
+}
+h6 { 
+	font-size: 1.0em; 
+	font-style: italic; 
+	margin-top: 0em;
+	margin-bottom: 0em;
+}
+
+ul { 
+	margin-top: 0; 
+	padding-top: 0;
+}
+
