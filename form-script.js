@@ -81,8 +81,6 @@ function saveFields() {
 
 	const showRows = getRowsToShow();
 	localStorage.setItem("mortgage.showRows", showRows);
-
-	//console.log("Saved fields. Rows = "+showRows);
 }
 
 function resetForm() {
