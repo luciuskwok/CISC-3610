@@ -111,20 +111,23 @@ function calculateMortgagePayments() {
 	let sr = getRowsToShow();
 
 	// Validate parameters
-	let parametersValid = true;
-	if (startYear == "" || startYear == 0 || matureYear == "" || matureYear == 0) {
-		parametersValid = false;
-	}
-	if (!parametersValid) {
-		// Show error info
+	if (startYear == "" || startYear == 0) {
+		alert("Start year cannot be blank or zero.");
 		return;
-	} 
+	}
+	if (matureYear == "" || matureYear == 0) {
+		alert("Maturity year cannot be blank or zero.");
+		return;
+	}
+	if (bal == "" || bal == 0) {
+		alert("Principal cannot be blank or zero.");
+		return;
+	}
 
 	// Calculate parameters
 	let n = (matureYear - startYear) * 12; // number of payments
 	let rPowN = Math.pow(1 + r, n);
-	let monthly = bal * (r * rPowN) / (rPowN - 1);
-	console.log("    Calc: monthly="+monthly+", n="+n+", r^n="+rPowN);
+	let monthly = Math.round(bal * (r * rPowN) / (rPowN - 1));
 
 	// Display monthly payment amount
 	setSpanText("monthlyPayment", "$"+formatAsCurrency(monthly));
@@ -176,7 +179,8 @@ function createRow(index, date, interest, principal, balance) {
 	
 	// Add a new row for the task
 	const rowElement = document.createElement("div");
-	rowElement.className = "row";
+	rowElement.className = index % 12 == 0? 
+		"row border-top border-secondary" : "row";
 	rowElement.id = "row"+index;
 	
 	rowElement.appendChild(createColumn(index, 1));
@@ -207,7 +211,12 @@ function setSpanText(elementId, text) {
 }
 
 function formatAsCurrency(valueInCents) {
-	const x = parseInt(valueInCents);
+	let x = parseInt(valueInCents);
+	let sign = 1;
+	if (x < 0) {
+		x = -x;
+		sign = -1;
+	}
 	const cents = Math.floor(x % 100);
 	const ones = Math.floor((x / 100) % 1000);
 	const thousands = Math.floor((x / 100_000) % 1000);
@@ -221,6 +230,9 @@ function formatAsCurrency(valueInCents) {
 	if (millions > 0) {
 		s = s.padStart(10, "0");
 		s = millions.toString()+","+s;
+	}
+	if (sign < 0) {
+		s = "-"+s;
 	}
 	return s;
 }

@@ -11,141 +11,130 @@
 
 <body class="bg-dark text-light">
   <div class="container">
-    <div class="row g-3 mb-3 align-items-center border-bottom">
-      <div class="col-12"><!-- border border-2 rounded -->
-        <h1 class="py-3">Lucius Kwok's Adjustable Rate Mortgage Calculator</h1>
+    <div class="col-12"> <!-- Form -->
+      <div class="container bg-house-img">
+        <div class="row align-items-center border-bottom my-2">
+          <div class="col-12"><!-- border border-2 rounded -->
+            <h1 class="">Lucius Kwok's Adjustable Rate Mortgage Calculator</h1>
+          </div>
+        </div>
+        <form>
+
+          <div class="row align-items-center my-2">
+            <div class="col-12 text-end">
+              <button type="button" class="btn btn-danger" id="resetButton">Reset Form</button>
+            </div>
+          </div>
+
+          <div class="row align-items-center my-2">
+            <div class="col-4 text-end">
+              <label for="principal" class="form-label">Principal ($)</label>
+            </div>
+            <div class="col-8">
+              <input type="text" class="form-control form-control-lg bg-dark text-white" maxlength="12" size="12" id="principal">
+            </div>
+          </div>
+
+          <div class="row align-items-center my-2">
+            <div class="col-4 text-end">
+              <label for="rate" class="form-label">Interest Rate</label>
+            </div>
+            <div class="col-8">
+              <div class="input-group">
+                <input type="text" class="form-control form-control-lg bg-dark text-white" maxlength="8" size="8" id="rate">
+                <div class="input-group-text bg-dark-subtle">%</div>
+              </div>
+            </div>
+         </div>
+
+          <div class="row align-items-center my-2">
+            <div class="col-4 text-end">
+              <label for="startYear" class="form-label">Start Year</label>
+            </div>
+            <div class="col-4">
+              <input type="text" class="form-control form-control-lg bg-dark text-white" maxlength="4" size="4" id="startYear">
+            </div>
+          </div>
+
+          <div class="row align-items-center my-2">
+            <div class="col-4 text-end">
+              <label for="maturityYear" class="form-label">Maturity Year/Month</label>
+            </div>
+            <div class="col-4">
+              <input type="text" class="form-control form-control-lg bg-dark text-white" maxlength="4" size="4" id="maturityYear">
+            </div>
+            <div class="col-4">
+              <select class="form-select form-control-lg" id="maturityMonth">
+                <option value="1" selected>Jan</option>
+                <option value="2">Feb</option>
+                <option value="3">Mar</option>
+                <option value="4">Apr</option>
+                <option value="5">May</option>
+                <option value="6">Jun</option>
+                <option value="7">Jul</option>
+                <option value="8">Aug</option>
+                <option value="9">Sep</option>
+                <option value="10">Oct</option>
+                <option value="11">Nov</option>
+                <option value="12">Dec</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row align-items-center my-2">
+            <div class="col-4 text-end">
+              Number of Rows to Show
+            </div>
+            <div class="col-8">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="showRows" id="showRows12" value="showRows12">
+                <label class="form-check-label" for="showRows12">12</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="showRows" id="showRows60" value="showRows60">
+                <label class="form-check-label" for="showRows60">60</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="showRows" id="showRowsAll" value="showRowsAll" checked>
+                <label class="form-check-label" for="showRowsAll">All</label>
+              </div>
+
+           </div>
+          </div>
+
+          <div class="row pb-3 align-items-center">
+            <div class="col-4 text-end">
+            </div>
+            <div class="col-8">
+              <button type="button" class="btn btn-primary" id="calculateButton">Calculate Mortgage Payments</button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
-    <form>
 
-      <div class="row g-3 mb-3 align-items-center">
-        <div class="col-12 text-end">
-          <button type="button" class="btn btn-danger" id="resetButton">Reset Form</button>
+    <div class="row align-items-center my-2">
+      <div class="col-12 text-center bg-secondary">Results Below</div>
+    </div>
+
+    <div class="row align-items-center border-bottom border-primary my-2">
+      <div class="col-12 text-center h3">Monthly Payment: 
+        <span id="monthlyPayment">$-.--</span>.</div>
+    </div>
+
+    <div class="row align-items-center border-bottom">
+      <div class="container-fluid" id="resultsContainer">
+        <div class="row border-bottom" id="resultsHeaderRow">
+          <div class="col-1 text-center">#</div>
+          <div class="col-2 text-center">Date</div>
+          <div class="col-3 text-center">Interest</div>
+          <div class="col-3 text-center">Principal</div>
+          <div class="col-3 text-center">Balance</div>
         </div>
       </div>
+    </div>
 
-      <div class="row g-3 mb-3 align-items-center">
-        <div class="col-4 text-end">
-          <label for="principal" class="form-label">Principal ($)</label>
-        </div>
-        <div class="col-8">
-          <input type="text" class="form-control form-control-lg bg-dark text-white" maxlength="12" size="12" id="principal">
-        </div>
-      </div>
-
-      <div class="row g-3 mb-3 align-items-center">
-        <div class="col-4 text-end">
-          <label for="rate" class="form-label">Interest Rate</label>
-        </div>
-        <div class="col-8">
-          <div class="input-group">
-            <input type="text" class="form-control form-control-lg bg-dark text-white" maxlength="8" size="8" id="rate">
-            <div class="input-group-text bg-dark-subtle">%</div>
-          </div>
-        </div>
-     </div>
-
-      <div class="row g-3 mb-3 align-items-center">
-        <div class="col-4 text-end">
-          <label for="startYear" class="form-label">Start Year</label>
-        </div>
-        <div class="col-4">
-          <input type="text" class="form-control form-control-lg bg-dark text-white" maxlength="4" size="4" id="startYear">
-        </div>
-      </div>
-
-      <div class="row g-3 mb-3 align-items-center">
-        <div class="col-4 text-end">
-          <label for="maturityYear" class="form-label">Maturity Year/Month</label>
-        </div>
-        <div class="col-4">
-          <input type="text" class="form-control form-control-lg bg-dark text-white" maxlength="4" size="4" id="maturityYear">
-        </div>
-        <div class="col-4">
-          <select class="form-select form-control-lg" id="maturityMonth">
-            <option value="1" selected>Jan</option>
-            <option value="2">Feb</option>
-            <option value="3">Mar</option>
-            <option value="4">Apr</option>
-            <option value="5">May</option>
-            <option value="6">Jun</option>
-            <option value="7">Jul</option>
-            <option value="8">Aug</option>
-            <option value="9">Sep</option>
-            <option value="10">Oct</option>
-            <option value="11">Nov</option>
-            <option value="12">Dec</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="row g-3 mb-3 align-items-center">
-        <div class="col-4 text-end">
-          Number of Rows to Show
-        </div>
-        <div class="col-8">
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="showRows" id="showRows12" value="showRows12">
-            <label class="form-check-label" for="showRows12">12</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="showRows" id="showRows60" value="showRows60">
-            <label class="form-check-label" for="showRows60">60</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="showRows" id="showRowsAll" value="showRowsAll" checked>
-            <label class="form-check-label" for="showRowsAll">All</label>
-          </div>
-
-       </div>
-      </div>
-
-      <div class="row g-3 mb-3 align-items-center">
-        <div class="col-4 text-end">
-        </div>
-        <div class="col-8">
-          <button type="button" class="btn btn-primary" id="calculateButton">Calculate Mortgage Payments</button>
-        </div>
-      </div>
-
-      <div class="row g-3 mb-3 align-items-center">
-        <div class="col-12 text-center bg-secondary">Results Below</div>
-      </div>
-
-      <div class="row g-3 mb-3 align-items-center border-bottom">
-        <div class="col-12 text-center h3">Monthly Payment: 
-          <span id="monthlyPayment">$-.--</span>.</div>
-      </div>
-
-      <div class="row g-3 mb-3 align-items-center border-bottom">
-        <div class="container-fluid" id="resultsContainer">
-          <div class="row border-bottom" id="resultsHeaderRow">
-            <div class="col-1 text-center">#</div>
-            <div class="col-2 text-center">Date</div>
-            <div class="col-3 text-center">Interest</div>
-            <div class="col-3 text-center">Principal</div>
-            <div class="col-3 text-center">Balance</div>
-          </div>
-
-          <div class="row" id="row1">
-            <div class="col-1 text-center">1</div>
-            <div class="col-2 text-center">10/1/24</div>
-            <div class="col-3 text-center">32.12</div>
-            <div class="col-3 text-center">18.14</div>
-            <div class="col-3 text-center">5346.02</div>
-          </div>
-          <div class="row" id="row2">
-            <div class="col-1 text-center">2</div>
-            <div class="col-2 text-center">11/1/24</div>
-            <div class="col-3 text-center">31.12</div>
-            <div class="col-3 text-center">19.14</div>
-            <div class="col-3 text-center">5246.02</div>
-          </div>
-        </div>
-      </div>
-
-    </form>
-    <div class="row g-3 mb-3 align-items-center border-top">
+    <div class="row align-items-center border-top">
       <div class="col-12 text-center">
        <a href="index.html">Return to main page</a>
      </div>
