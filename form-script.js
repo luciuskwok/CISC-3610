@@ -103,7 +103,7 @@ function calculateMortgagePayments() {
 	removeResultRows();
 
 	// Get parameters
-	let bal = document.getElementById("principal").value * 100; // value in pennies
+	let bal = document.getElementById("principal").value.replace(",", "") * 100; // value in pennies
 	let r = document.getElementById("rate").value / (12 * 100); // rate per month
 	let startYear = document.getElementById("startYear").value;
 	let matureYear = document.getElementById("maturityYear").value;
