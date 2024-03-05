@@ -180,7 +180,7 @@ function createRow(index, date, interest, principal, balance) {
 	// Add a new row for the task
 	const rowElement = document.createElement("div");
 	rowElement.className = index % 12 == 0? 
-		"row border-top border-secondary" : "row";
+		"row border-bottom border-secondary" : "row";
 	rowElement.id = "row"+index;
 	
 	rowElement.appendChild(createColumn(index, 1));
