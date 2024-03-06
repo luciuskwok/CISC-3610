@@ -1,9 +1,5 @@
 /* style.css */
 
-#canvas {
-	border: 0px solid #A0A0A0;
-}
-
 body { 
 	/* font-family: "Arial", "Helvetica", sans-serif; */ 
 /*	font-size: 18pt;*/
@@ -42,4 +38,12 @@ h6 {
 	background-size: cover;
 	position: relative;
 
+}
+
+#canvas {
+	border: 0px solid #A0A0A0;
+}
+
+.dark-green {
+	color: #04780A;
 }
