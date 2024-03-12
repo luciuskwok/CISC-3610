@@ -6,6 +6,7 @@ const tree_stroke_color = "#036308";
 const trunk_fill_color = "#ad5809";
 const trunk_stroke_color = "#633103";
 const grid_stroke_color = "#024405";
+const bobaImg = new Image();
 
 // Globals
 var frameCounter = 0;
@@ -117,10 +118,22 @@ function drawCabin(ctx) {
 }
 
 function drawTitle(ctx, text) {
+	let cx = 320;
+	let cy = 24;
+	let lh = 10;
+	// Text background
+	ctx.beginPath();
+	ctx.ellipse(cx, cy, 120, 48, 0, 0, 2 * Math.PI);
+	ctx.closePath();
+	ctx.strokeStyle = "#000000";
+	ctx.stroke();
+	ctx.fillStyle = "#FFFFFF80";
+	ctx.fill();
+
 	ctx.textAlign = "center";
 	ctx.font = "24px Georgia";
-	ctx.fillStyle = "#FFFFFF";
-	ctx.fillText(text, 320, 48);
+	ctx.fillStyle = "#000000";
+	ctx.fillText(text, cx, cy+lh);
 }
 
 function renderFrame() {
@@ -130,6 +143,10 @@ function renderFrame() {
 	const offset = (frameCounter % 120.0) / 120.0;
 
 	drawStaticBackground(ctx);
+
+	// position boba
+	const bobaX = -112 + frameCounter % (640 + 112);
+	ctx.drawImage(bobaImg, bobaX, 128);
 
 	drawGrid(ctx, 1.0 - offset);
 
@@ -162,7 +179,7 @@ function renderFrame() {
 	ctx.scale(0.5, 0.5);
 	drawCabin(ctx);
 	ctx.restore();
-
+		
 	// Text
 	drawTitle(ctx, "Cabin in the Woods");
 }
@@ -176,6 +193,9 @@ function renderLoop() {
 }
 
 // == Main Script ==
+
+// Load images
+bobaImg.src = "img/boba.png";
 
 // Kick off rendering
 renderLoop();
