@@ -1,5 +1,5 @@
 # CISC-3610
 
-Portfolio site for CISC 3610 Mutlimedia Programming
+Portfolio site for _CISC 3610 Multimedia Programming_.
 
-This site will contain the homework and assignments for this course.
+This site contains the homework, labs, and assignments for this course.
