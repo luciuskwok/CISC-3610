@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lucius Kwok's Resume</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-dark text-light">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-12 h1">  
+        Lucius Kwok's Resume
+      </div>
+    </div><!-- row -->
+    <div class="row align-items-center">
+      <div class="col-12 mb-3">  
+        <ul class="nav nav-pills" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="true">Profile</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="exp-tab" data-bs-toggle="tab" data-bs-target="#exp-tab-pane" type="button" role="tab" aria-controls="exp-tab-pane" aria-selected="false">Education & Experience</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="skills-tab" data-bs-toggle="tab" data-bs-target="#skills-tab-pane" type="button" role="tab" aria-controls="skills-tab-pane" aria-selected="false">Skills </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="portfolio-tab" data-bs-toggle="tab" data-bs-target="#portfolio-tab-pane" type="button" role="tab" aria-controls="portfolio-tab-pane" aria-selected="false">Portfolio</button>
+          </li>
+        </ul>
+    </div><!-- col-12 -->
+  </div><!-- row -->
+  <div class="row align-items-center">
+    <div class="col-12">
+      <div class="tab-content bg-dark" id="myTabContent">
+        <div class="tab-pane fade show active" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+          
+          <h3 class="mt-4 text-warning">Contact Info</h3>
+          
+          <div class="mb-3">
+          <h5>Lucius Kwok</h4>
+          123 Main St<br>
+          Anytown, NY 12345</div>
+          
+          <div class="mb-3"><b>Phone:</b> +1 (212) 555-1234</div>
+          <div class="mb-3"><b>Email:</b> lucius.kwok@felttip.com</div>
+          
+          <h3 class="mt-4 text-warning">Personal Statement</h3>
+          <div class="mb-3">I'm always learning new stuff.</div>
+
+          <h3 class="mt-4 text-warning">Links</h3>
+          <div class="mb-2"><a href="https://linkedin.com/in/luciuskwok">LinkedIn</a></div>
+          <div class="mb-2"><a href="https://github.com/luciuskwok">GitHub</a></div>
+          <div class="mb-2"><a href="https://felttip.com/">Felt Tip (my company)</a></div>
+          
+        </div>
+        <div class="tab-pane fade" id="exp-tab-pane" role="tabpanel" aria-labelledby="exp-tab" tabindex="0">
+          
+          <h3 class="mt-3 text-warning">Experience</h3>
+          <div class="mb-5">
+            <h4><b>Felt Tip Inc</b>, New York — <i>Owner</i></h4>
+            <div class="text-secondary">AUG 1999 — PRESENT</div>
+            <div>This is the company I started to sell my own apps. Full-stack developer as well as entrepreneur and manager.</div>
+          </div>
+          <hr>
+          
+          <h3 class="mt-3 text-warning">Education</h3>
+          
+          <div class="mb-4">
+            <h4><b>Brooklyn College</b>, New York — <i>B.S. Multimedia Computing</i></h4>
+            <div class="text-secondary">JAN  2023 - PRESENT</div>
+            <div class="mb-3">Expected graduation date 2025. Minor in Studio Art.</div>
+          </div>
+          
+          <div class="mb-5">
+            <h4><b>Temple University</b>, Philadelphia — <i>B.S. Architecture</i></h4>
+            <div class="text-secondary">SEP 1994 - AUG 1999</div>
+            <div class="mb-3">Completed 135 credits towards degree.</div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="skills-tab-pane" role="tabpanel" aria-labelledby="skills-tab" tabindex="0">
+          
+          <h3 class="mt-3 text-warning">Programming Languages</h3>
+          Swift, Objective-C, C++, C, Java, JavaScript, HTML/CSS, Python, Pascal, Assembly
+          
+          
+          <h3 class="mt-3 text-warning">Frameworks</h3>
+          UIKit (iOS), Cocoa (macOS), Bootstrap, jQuery
+          
+          <h3 class="mt-3 text-warning">Cloud Platforms</h3>
+          Amazon AWS, Google App Engine
+          
+          <h3 class="mt-3 text-warning">Other Tools</h3>
+          Docker, Git, GitHub, Mercurial
+        </div>
+        <div class="tab-pane fade" id="portfolio-tab-pane" role="tabpanel" aria-labelledby="portfolio-tab" tabindex="0">
+          
+          <div id="carouselPortfolio" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselPortfolio" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselPortfolio" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselPortfolio" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active px-4 py-5">
+                <a href="https://felttip.com/ss/"><img src="img/portfolio-ss.png" class="d-block w-100" alt="Sound Studio app for Mac"></a>
+              </div>
+              <div class="carousel-item px-4 py-2">
+                <a href="https://www.felttip.com/run5k/"><img src="img/portfolio-run5k.png" class="d-block w-100" alt="Run 5k iOS app"></a>
+              </div>
+              <div class="carousel-item px-5">
+                <img src="img/portfolio_toma_walk_4x.gif" class="d-block w-100" alt="Toma walk cycle animation">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselPortfolio" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselPortfolio" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div><!-- col-12 -->
+  </div><!-- row -->
+  
+  <div class="row align-items-center">
+    <div class="col-12 text-center">
+      <hr>
+      <a href="index.html">Return to main page</a>
+   </div><!-- col-12 -->
+  </div><!-- row -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
+</html>

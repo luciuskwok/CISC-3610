@@ -5,6 +5,13 @@ body {
 /*	font-size: 18pt;*/
 }
 
+a {
+	color: #5284ff;
+}
+a:visited {
+	color: #6b51ff;
+}
+
 h1 { 
 /*	font-size: 1.5em; */
 	font-weight: bold;
