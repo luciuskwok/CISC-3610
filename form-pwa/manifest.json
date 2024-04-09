@@ -1,0 +1,22 @@
+{
+	"name":"ARM Calculator",
+	"short_name":"ARM",
+	"start_url":"index.html",
+	"display":"standalone",
+	"background_color":"#836e53",
+	"theme_color":"black",
+	"scope": ".",
+	"description":"Lucius Kwok's Adjustable Rate Mortgage Calculator",
+	"icons":[
+		{
+			"src":"img/icon-192px.png",                      
+			"sizes":"192x192",
+			"type":"image/png"
+		},
+		{
+			"src":"img/icon-512px.png",
+			"sizes":"512x512",
+			"type":"image/png"
+		}
+	]
+}

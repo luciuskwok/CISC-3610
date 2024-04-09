@@ -1,0 +1,21 @@
+/* form-pwa/style.css */
+
+a {
+	color: #5284ff;
+}
+a:visited {
+	color: #6b51ff;
+}
+
+.bg-house-img {
+	background-image: url("img/house_darkened_1920.jpg");
+	/* Image dimensiosn: 1920px x 1442px */
+	/* Image source: Pixabay.com */
+
+	min-height: 380px;
+
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}

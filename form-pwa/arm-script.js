@@ -43,7 +43,7 @@ function loadLocalStorage() {
 	if (maturityMonth != null) {
 		maturityMonthSelect.value = maturityMonth;
 	} else {
-		maturityMonth.value = 1;
+		maturityMonthSelect.value = 1;
 	}
 
 	const showRows = localStorage.getItem("mortgage.showRows");
